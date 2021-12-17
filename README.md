@@ -1,4 +1,7 @@
-vue3-vuetify3-django-djoser-authentication-template
+# vue3-vuetify3-django-djoser-authentication-template
+### To do:
+
+    * add form validation
 
 ### Env Requirements
 
