@@ -1,8 +1,14 @@
 # VVDDA
 ### vue3-vuetify3-django-djoser-authentication-template
+
+### Features:
+
+   * Dark/Light Theme switching
+   * Authentication/Registration
+   
 ### To do:
 
-    * add form validation
+   * Add reactive form validation
 
 ### Env Requirements
 
