@@ -24,6 +24,8 @@
             <v-switch
               @click="toggleTheme"
               label="Dark Mode"
+              v-model="theme"
+              value="dark"
               style="height: 56px"
             ></v-switch>
           </v-btn>
@@ -49,8 +51,11 @@ export default {
 
   data: () => ({
     theme,
-    toggleTheme: () =>
-      (theme.value = theme.value === "light" ? "dark" : "light"),
+    toggleTheme: () => {
+      theme.value = theme.value === "light" ? "dark" : "light";
+      // save theme.value to localStorage
+      localStorage.setItem("theme", theme.value);
+    },
   }),
   methods: {
     logout() {
@@ -75,6 +80,8 @@ export default {
     } else {
       axios.defaults.headers.common["Authorization"] = "";
     }
+    // load theme.value from localStorage
+    theme.value = localStorage.getItem("theme") || "light";
   },
 };
 </script>
