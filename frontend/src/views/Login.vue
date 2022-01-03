@@ -1,28 +1,30 @@
 <template>
-  <div class="login">
-    <h1>Login</h1>
-    <form @submit.prevent="login">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="username"
-          class="form-control"
-          id="username"
-          v-model="username"
-        />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="password"
-          v-model="password"
-        />
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-  </div>
+  <v-row class="login">
+    <v-col>
+      <h1>Login</h1>
+      <v-form ref="loginForm" @submit.prevent="login">
+        <div class="form-group">
+          <v-text-field
+            type="username"
+            class="form-control"
+            id="username"
+            v-model="username"
+            label="Username"
+          />
+        </div>
+        <div class="form-group">
+          <v-text-field
+            type="password"
+            class="form-control"
+            id="password"
+            v-model="password"
+            label="Password"
+          />
+        </div>
+        <v-btn type="submit" class="btn btn-primary">Login</v-btn>
+      </v-form>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

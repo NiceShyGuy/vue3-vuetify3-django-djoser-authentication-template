@@ -20,13 +20,13 @@
               >Logout</router-link
             ></v-btn
           >
-          <v-btn
-            ><v-switch
+          <v-btn>
+            <v-switch
               @click="toggleTheme"
               label="Dark Mode"
               style="height: 56px"
-            ></v-switch
-          ></v-btn>
+            ></v-switch>
+          </v-btn>
         </v-app-bar>
       </v-card>
 
