@@ -95,4 +95,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+
+a {
+  color: var(--v-theme-primary);
+  text-decoration: none;
+}
 </style>

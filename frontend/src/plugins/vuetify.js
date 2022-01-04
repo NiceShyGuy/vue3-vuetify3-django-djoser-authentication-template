@@ -17,13 +17,13 @@ export const vuetify = createVuetify({
       light: {
         colors: {
           primary: colors.blue.darken2,
-          secondary: colors.grey.lighten3,
-          background: colors.grey.lighten5,
+          secondary: colors.grey.lighten1,
+          background: colors.grey.lighten3,
           "on-background": colors.grey.darken4,
           error: colors.red.accent3,
           info: colors.blue.darken2,
           success: colors.green.accent3,
-          surface: colors.grey.lighten3,
+          surface: colors.grey.lighten2,
           warning: colors.orange.accent3,
         },
         dark: false,
