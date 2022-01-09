@@ -1,3 +1,16 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.00251 14.9297L0 1.07422H6.14651L8.00251 4.27503L9.84583 1.07422H16L8.00251 14.9297Z" fill="black"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,6,0)">
+        <path d="M43.75,0L23.31,0L43.75,48.32" style="fill-rule:nonzero;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,6,0)">
+        <path d="M43.75,62.5L43.75,100L0,14.58L22.92,14.58L43.75,62.5Z" style="fill-rule:nonzero;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,6,0)">
+        <path d="M43.75,0L64.19,0L43.75,48.32" style="fill-rule:nonzero;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,6,0)">
+        <path d="M64.58,14.58L87.5,14.58L43.75,100L43.75,62.5L64.58,14.58Z" style="fill-rule:nonzero;"/>
+    </g>
 </svg>

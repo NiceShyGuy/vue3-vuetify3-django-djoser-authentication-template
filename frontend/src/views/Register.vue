@@ -1,6 +1,25 @@
 <template>
   <v-row class="register" justify="space-between">
     <v-col>
+      <h1>Register</h1>
+      <v-alert
+        border="start"
+        color="error"
+        class="ma-2"
+        align="left"
+        v-if="Object.keys(errors).length > 0"
+      >
+        <dl>
+          <dt v-for="(values, name) in errors" :key="name">
+            <dl>
+              {{ name }} :
+              <li v-for="value in values" :key="value">
+                {{ value }}
+              </li>
+            </dl>
+          </dt>
+        </dl>
+      </v-alert>
       <v-form ref="registerForm" @submit.prevent="submitForm">
         <div class="form-group">
           <v-text-field
@@ -33,8 +52,8 @@
           <v-text-field
             type="password"
             class="form-control"
-            id="password_confirmation"
-            v-model="password_confirmation"
+            id="re_password"
+            v-model="re_password"
             label="Password Confirmation"
           />
         </div>
@@ -54,33 +73,17 @@ export default {
       username: "",
       email: "",
       password: "",
-      password_confirmation: "",
+      re_password: "",
+      errors: {},
     };
   },
   methods: {
     submitForm() {
-      if (
-        this.email === "" ||
-        this.password === "" ||
-        this.password_confirmation === "" ||
-        this.username === ""
-      ) {
-        alert("Please fill all the fields");
-        return;
-      }
-      const validate = this.validateEmail(this.email);
-      if (!validate) {
-        alert("Please enter a valid email");
-        return;
-      }
-      if (this.password !== this.password_confirmation) {
-        alert("Passwords do not match");
-        return;
-      }
       axios
         .post("/api/v1/users/", {
           username: this.username,
           password: this.password,
+          re_password: this.re_password,
           email: this.email,
         })
         .then((response) => {
@@ -88,13 +91,9 @@ export default {
           console.log(response);
         })
         .catch((error) => {
-          console.log(error);
+          this.errors = error.response.data;
+          console.log(this.errors);
         });
-    },
-    validateEmail(email) {
-      var re =
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
     },
   },
 };

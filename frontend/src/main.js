@@ -6,6 +6,7 @@ import { vuetify } from "./plugins/vuetify";
 import { loadFonts } from "./plugins/webfontloader";
 import Vuelidate from "@vuelidate/core";
 import axios from "axios";
+import "animate.css";
 
 axios.defaults.baseURL = "http://127.0.0.1:8000";
 

@@ -2,17 +2,18 @@
   <v-row class="login">
     <v-col>
       <h1>Login</h1>
+      <AlertError :errors="errors" />
       <v-form ref="loginForm" @submit.prevent="login">
-        <div class="form-group">
+        <div class="form-group" align="left">
           <v-text-field
-            type="username"
+            type="text"
             class="form-control"
             id="username"
             v-model="username"
             label="Username"
           />
         </div>
-        <div class="form-group">
+        <div class="form-group" align="left">
           <v-text-field
             type="password"
             class="form-control"
@@ -29,12 +30,18 @@
 
 <script>
 import axios from "axios";
+import AlertError from "../components/AlertError.vue";
+
 export default {
   name: "Login",
+  components: {
+    AlertError,
+  },
   data() {
     return {
       username: "",
       password: "",
+      errors: {},
     };
   },
   methods: {
@@ -46,7 +53,6 @@ export default {
           password: this.password,
         })
         .then((response) => {
-          console.log(response);
           const token = response.data.auth_token;
           this.$store.commit("setToken", token);
           axios.defaults.headers.common["Authorization"] = "Token " + token;
@@ -54,7 +60,7 @@ export default {
           this.$router.push("/dashboard");
         })
         .catch((error) => {
-          console.log(error);
+          this.errors = error.response.data;
         });
     },
   },

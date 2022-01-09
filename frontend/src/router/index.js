@@ -4,6 +4,9 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Register from "../views/Register.vue";
 import Dashboard from "../views/Dashboard.vue";
+import Activate from "../views/Activate.vue";
+import NotFound from "../views/NotFound.vue";
+import { onActivated } from "vue";
 
 const routes = [
   {
@@ -43,6 +46,12 @@ const routes = [
       requiresAuth: true,
     },
   },
+  {
+    path: "/activate/:uid?/:token?",
+    name: "Activate",
+    component: Activate,
+  },
+  { path: "/:catchAll(.*)", name: "NotFound", component: NotFound },
 ];
 
 const router = createRouter({
