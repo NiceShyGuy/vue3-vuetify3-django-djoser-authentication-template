@@ -22,6 +22,7 @@
     django-cors-headers==3.8.0
     djangorestframework==3.12.4
     djoser==2.1.0
+    environ
     python3.8.3
 
     ### frontend
