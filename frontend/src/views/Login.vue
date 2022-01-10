@@ -8,9 +8,9 @@
           <v-text-field
             type="text"
             class="form-control"
-            id="username"
-            v-model="username"
-            label="Username"
+            id="email"
+            v-model="email"
+            label="Email"
           />
         </div>
         <div class="form-group" align="left">
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
       errors: {},
     };
@@ -49,7 +49,7 @@ export default {
       axios.defaults.headers.common["Authorization"] = "";
       axios
         .post("/api/v1/token/login", {
-          username: this.username,
+          email: this.email,
           password: this.password,
         })
         .then((response) => {

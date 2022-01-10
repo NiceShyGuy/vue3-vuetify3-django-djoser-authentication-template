@@ -160,7 +160,7 @@ DOMAIN = ('localhost:8080')
 # get SITE_NAME from BASE_DIR
 SITE_NAME = os.path.split(BASE_DIR)[1]
 DJOSER = {
-    'LOGIN_FIELD': 'username',
+    'LOGIN_FIELD': 'email',
     'USER_CREATE_PASSWORD_RETYPE': True,
     'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
