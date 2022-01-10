@@ -47,12 +47,12 @@ export default {
   name: "App",
 
   setup() {
-    const theme = ref("light");
-
     return {
       theme,
-      toggleTheme: () =>
-        (theme.value = theme.value === "light" ? "dark" : "light"),
+      toggleTheme: () => {
+        theme.value = theme.value === "light" ? "dark" : "light";
+        localStorage.setItem("theme", theme.value);
+      },
     };
   },
   methods: {
@@ -78,7 +78,7 @@ export default {
       axios.defaults.headers.common["Authorization"] = "";
     }
     // load theme.value from localStorage
-    theme.value = localStorage.getItem("theme") || "light";
+    theme.value = localStorage.getItem("theme");
   },
 };
 </script>
