@@ -22,7 +22,9 @@
             <v-switch
               @click="toggleTheme"
               label="Dark Mode"
-              value="dark"
+              v-model="theme"
+              true-value="dark"
+              false-value="light"
               style="height: 56px"
             ></v-switch>
           </v-btn>
@@ -41,12 +43,11 @@ import { ref } from "vue";
 import { mapGetters } from "vuex";
 import axios from "axios";
 
-const theme = ref("light");
-
 export default {
   name: "App",
 
   setup() {
+    const theme = ref("light");
     return {
       theme,
       toggleTheme: () => {
@@ -77,8 +78,10 @@ export default {
     } else {
       axios.defaults.headers.common["Authorization"] = "";
     }
-    // load theme.value from localStorage
-    theme.value = localStorage.getItem("theme");
+    // load theme from local storage
+    if (localStorage.getItem("theme")) {
+      this.theme = localStorage.getItem("theme");
+    }
   },
 };
 </script>
